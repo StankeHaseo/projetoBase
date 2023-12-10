@@ -25,7 +25,9 @@ namespace HelperStockBeta.Infra.IoC
             //Mapping Injection DTOs
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
-
+            
+            services.AddScoped<IProductService, ProductService>(); 
+           
             return services;
         }
     }

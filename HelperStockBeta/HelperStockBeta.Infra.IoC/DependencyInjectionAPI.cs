@@ -1,4 +1,5 @@
-﻿using HelperStockBeta.Application.Interfaces;
+﻿using HelperStockBeta.Application.DTOs;
+using HelperStockBeta.Application.Interfaces;
 using HelperStockBeta.Application.Mappings;
 using HelperStockBeta.Application.Services;
 using HelperStockBeta.Domain.Interface;
@@ -22,10 +23,13 @@ namespace HelperStockBeta.Infra.IoC
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+
             //Mapping Injection DTOs
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
+            services.AddScoped<IProductService, ProductService>();
+            services.AddAutoMapper(typeof(ProductDTO));
             return services;
         }
     }

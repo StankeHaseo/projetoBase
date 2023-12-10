@@ -8,7 +8,7 @@ namespace HelperStockBeta.API.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly ICategoryService _categoryService;
+        public readonly ICategoryService _categoryService;
 
         public CategoriesController(ICategoryService categoryService)
         {
